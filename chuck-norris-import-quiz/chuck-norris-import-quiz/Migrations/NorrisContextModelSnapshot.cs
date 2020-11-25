@@ -24,9 +24,9 @@ namespace chucknorrisimportquiz.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("ChuckNorrisId")
+                    b.Property<string>("ChuckNorrisId")
                         .HasMaxLength(40)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Joke")
                         .HasColumnType("nvarchar(max)");
@@ -37,7 +37,7 @@ namespace chucknorrisimportquiz.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("chuckNorrisJokes");
+                    b.ToTable("NorrisJokes");
                 });
 #pragma warning restore 612, 618
         }

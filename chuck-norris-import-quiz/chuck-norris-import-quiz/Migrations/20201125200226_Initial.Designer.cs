@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace chucknorrisimportquiz.Migrations
 {
     [DbContext(typeof(NorrisContext))]
-    [Migration("20201125174501_Initial")]
+    [Migration("20201125200226_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,9 +26,9 @@ namespace chucknorrisimportquiz.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
-                    b.Property<int>("ChuckNorrisId")
+                    b.Property<string>("ChuckNorrisId")
                         .HasMaxLength(40)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Joke")
                         .HasColumnType("nvarchar(max)");
@@ -39,7 +39,7 @@ namespace chucknorrisimportquiz.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("chuckNorrisJokes");
+                    b.ToTable("NorrisJokes");
                 });
 #pragma warning restore 612, 618
         }
